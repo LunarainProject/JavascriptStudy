@@ -21,8 +21,7 @@ for elem in folders:
     for i in range(len(lines)):
         if '```javascript' in lines[i]:
             codefence = True
-            i+=1
-            jsfile = open(join(elem, (lines[i])[2:-1]), 'wt', encoding='utf8')
+            jsfile = open(join(elem, (lines[i+1])[2:-1]), 'wt', encoding='utf8')
             continue
         if '```' in lines[i] and '```javascript' not in lines[i]:
             codefence = False
