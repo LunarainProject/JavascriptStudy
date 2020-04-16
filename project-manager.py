@@ -23,10 +23,13 @@ for elem in folders:
             codefence = True
             jsfile = open(join(elem, (lines[i+1])[2:-1]), 'wt', encoding='utf8')
             continue
-        if '```' in lines[i] and '```javascript' not in lines[i]:
-            codefence = False
-            jsfile.close()
-            continue
     
         if codefence:
+            if '```' in lines[i] and '```javascript' not in lines[i]:
+                codefence = False
+                jsfile.close()
+                continue
+            
             jsfile.write(lines[i])
+        
+            

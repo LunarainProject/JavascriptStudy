@@ -37,9 +37,11 @@ var y = 3;
 console.log(y);
 ```
 ### 실행 결과
-> undefined  
-  undefined  
-  3  
+```
+undefined  
+undefined
+3
+```  
 
 ## 변수 명명 규칙
 
