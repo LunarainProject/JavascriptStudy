@@ -22,14 +22,14 @@ var sym3 = Symbol('paxbun');
 console.log(sym1 == sym2) //false
 console.log(sym3.toString()); //Symbol(paxbun)
 
-var a = Symbol.for('hello')
-var b = Symbol.for('hello')
-var c = Symbol.for('bye')
-var d = Symbol('bye')
+var a = Symbol.for('hello');
+var b = Symbol.for('hello');
+var c = Symbol.for('bye');
+var d = Symbol('bye');
 
-console.log(a == b, b == c)   //true false
-console.log(Symbol.keyFor(c)) //bye
-console.log(Symbol.keyFor(d)) //undefined
+console.log(a == b, b == c);   //true false
+console.log(Symbol.keyFor(c)); //bye
+console.log(Symbol.keyFor(d)); //undefined
 ```
 
 ## 템플릿 리터럴
@@ -55,17 +55,17 @@ console.log(Symbol.keyFor(d)) //undefined
 ```javascript
 //template-literal.js
 var a = `I'm happy
-             today.`
-var b = "I'm happy\ntoday."
-var c = String.raw`I'm happy\ntoday.`
+             today.`;
+var b = "I'm happy\ntoday.";
+var c = String.raw`I'm happy\ntoday.`;
 
-console.log(a)
-console.log(b)
-console.log(c)
+console.log(a);
+console.log(b);
+console.log(c);
 
-var d = 10
-var e = 12
-console.log(`d : ${d}, e : ${e}, d+e : ${d+e}`)
+var d = 10;
+var e = 12;
+console.log(`d : ${d}, e : ${e}, d+e : ${d+e}`);
 ```
 ### 실행 결과
 
