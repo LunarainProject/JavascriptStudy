@@ -19,7 +19,7 @@ c = 2;
 console.log(a, b, c, d);
 ```
 
-### 실행 결과
+### 출력 결과
 > 0 1 2 undefined
 
 ## 변수 끌어올림
@@ -36,7 +36,7 @@ console.log(y);
 var y = 3;
 console.log(y);
 ```
-### 실행 결과
+### 출력 결과
 ```
 undefined  
 undefined

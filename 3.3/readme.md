@@ -67,7 +67,7 @@ var d = 10;
 var e = 12;
 console.log(`d : ${d}, e : ${e}, d+e : ${d+e}`);
 ```
-### 실행 결과
+### 출력 결과
 
 ```
 I'm happy  
