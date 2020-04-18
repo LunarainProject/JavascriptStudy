@@ -128,6 +128,7 @@ console.log(circle.center);
 
 ```
 38.48451000647496
+{ x: 2, y: 3 }
 
 ```
 
