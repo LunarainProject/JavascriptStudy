@@ -115,12 +115,20 @@ let circle = {
     }
 };
 console.log(circle.area());
+
+circle.translate = function(a, b) {
+    this.center.x=this.center.x+a;
+    this.center.y=this.center.y+b;
+}
+circle.translate(1, 2);
+console.log(circle.center);
 ```
 
 ### 출력 결과
 
 ```
 38.48451000647496
+
 ```
 
 메서드는 일반적으로 메서드가 속한 객체의 내부 데이터(프로퍼티 값)을 바꾸는 용도로 사용합니다. 객체의 밖에서 객체를 수정할 때에 의도치 않은 에러를 일으키지 않으려면 메서드를 통해서 객체에 접근해야 합니다. 이렇게 객체를 부품 삼아 프로그램을 만들어 가는 기법을 `객체 지향 프로그래밍`이라고 부릅니다.
