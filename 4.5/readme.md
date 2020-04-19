@@ -17,7 +17,6 @@ console.log(various.length);
 
 ```
 4
-
 ```
 
 
@@ -42,7 +41,6 @@ console.log(various.length);
 ```
 5
 6
-
 ```
 
 ## 배열 요소의 추가와 삭제
@@ -76,5 +74,4 @@ console.log(a.length);
 [ 'A', 'B', 'C', 'D', 'D' ]
 [ 'A', <1 empty item>, 'C', 'D', 'D' ]
 5
-
 ```
