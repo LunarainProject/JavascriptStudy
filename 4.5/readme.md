@@ -1,60 +1,80 @@
-# 내장 객체
 
-## 내장 생성자
+# 배열
 
-자바스크립트의 내장 객체들은 내장 생성자를 가집니다.
+## 리털로 배열 생성하기  
 
-|생성자 이름|생성되는 객체                      |
-|----------|----------------------------------|
-|Object    |일반 객체                          |
-|String    |문자열 객체                        |
-|Number    |숫자 객체                          |
-|Boolean   |논리값 객체                        |
-|Array     |배열                               |
-|Date      |날짜와 시간을 다루는 객체           |
-|Function  |함수 객체                          |
-
-`숫자 객체`라는 말이 좀 이상하게 들릴 수 있는데, 브라우저는 **원시 타입**인 `숫자`를 자동으로 `숫자 객체`로 바꾸어 줍니다.
-
-ECMAScript 6부터는 새로운 내장 객체들이 추가되었습니다. Symbol 객체가 그 예시입니다.
-
-## Date 내장 객체
-
-Date 생성자는 날짜, 시간을 표현하는 객체를 생성합니다. 기본값으로 생성자는 현재 시간을 담아 줍니다. 생성자에 년도, 월, 일, 시, 분, 초의 순서로 값을 전달하면 그 시간으로 생성됩니다.
+배열은 타 언어와 생성법이 거의 다르지 않습니다.  
+변수의 요소에는 변수와 마찬가지로 모든 타입의 값이 올 수 있습니다.  
+또한 배열의 length 프로퍼티에는 배열 요소의 길이가 담겨있습니다.  
 
 ```javascript
-//date.js
-let now = new Date();
-console.log(now);
-
-let then = new Date(2018, 1, 1);
-let elapsed = now - then; // millisecond unit
-console.log(elapsed);
-console.log(now.getFullYear(), now.getMonth(), now.getDay());
+//list.js
+var various=[3.14, "pi", true, {x:1, y:2}, [2,4,6,8] ];
+console.log(various.length);
 ```
 
 ## 출력 결과
 
 ```
-2020-04-17T09:46:56.147Z
-69706016147
-2020 3 5
-```
-
-## Function 생성자
-
-Function 생성자를 이용하면 함수를 생성할 수 있습니다. 
+4
 
 ```
-var 변수이름 = new Function(첫번째 인수, ..., n번째 인수, 함수 몸통)
 
-예시
 
-var square = new Function("x", "return x*x");
+## Array 생성자로 배열 생성하기
+
+배열은 Array 생성자로도 생성할 수 있습니다.  
+배열의 리터럴 요소는 Array 생성자의 인수가 됩니다.
+Array 생성자의 인수가 한 개고 그 값이 양의 정수면 의미가 달라집니다. 이때 인수는 배열 길이를 뜻하므로 배열이 그 길이만큼 생성됩니다.
+단 Array 생성자의 인수가 한 개고 그 값이 양의 정수가 아니면 오류가 발생합니다.
+
+```javascript
+//array.js
+var various= new Array(3.14, "pi", true, {x:1, y:2}, [2,4,6,8] );
+console.log(various.length);
+
+var various = new Array(6);
+console.log(various.length);
 ```
 
-특별한 상황 외에는 사용하지 않고, 상당히 위험한 방식입니다.
+## 출력 결과
 
-## 전역 객체
+```
+5
+6
 
-전역 객체는 **전역 프로퍼티**, **전역 생성자**, **전역 함수**, **내장 객체**를 가지고 있습니다. `Math` 등이 내장 객체에 포함됩니다. 
+```
+
+## 배열 요소의 추가와 삭제
+
+없는 배열 요소에 값을 대입하면 새로운 요소가 추가됩니다.  
+push 메서드를 통해 요소를 배열 끝에 추가할 수 있으며 delete 연산자를 통해 특정 배열 요소를 삭제할 수 있습니다.  
+이런 추가나 제거로 인해 값이 정의되지 않은 요소가 있는 배열이 만들어지기도 합니다.  
+이런 배열을 `희소 배열`이라고 합니다.  
+희소 배열은 배열 요소의 개수와 배열의 길이가 다릅니다.
+
+
+```javascript
+//editList.js
+var a=["A", "B", "C"];
+a[3]= "D";
+console.log(a);
+
+a.push("D");
+console.log(a);
+
+delete a[1];
+console.log(a);
+
+console.log(a.length);
+```
+
+## 출력 결과
+
+```
+[ 'A', 'B', 'C', 'D' ]
+[ 'A', 'B', 'C', 'D', 'D' ]
+[ 'A', <1 empty item>, 'C', 'D', 'D' ]
+5
+
+```
