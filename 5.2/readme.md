@@ -37,3 +37,10 @@ b = 0.2;
 console.log(a / b == 0.8);  //→ false
 console.log(Math.abs(a / b - 0.8) <1e-10);  //->True
 ```
+
+## 출력 결과
+```
+0.004999875006248544
+false
+true
+```
