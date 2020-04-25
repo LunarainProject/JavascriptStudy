@@ -10,4 +10,4 @@ console.log(msgObj.valueOf());                //→ 'Delicious bag' : 문자열
 
 console.log(msgObj.slice(0,9));               //→ 'Delicious' : 0번째 부터 9번째 문자 이전의 문자열
 console.log(msgObj.includes("Delic"));        //→ true : "Delic"가 포함되어 있는지를 뜻하는 논리값
-console.log(msgObj.indexOf("i"));             //→ 3 : 문자 "i"가 처음 나오는 위치
+console.log(msgObj.indexOf("i"));             //→ 3 : 문자 'i'가 처음 나오는 위치
