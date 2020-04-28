@@ -17,19 +17,32 @@ for elem in folders:
 
     lines = readme.readlines()
 
+    """language name, comment starting sign, comment ending sign"""
+    lang_name_comment = [
+        ('javascript', '//', ''), 
+        ('html', '<!--', '-->'),
+        ('css', '//', '')
+        ]
+
     codefence = False
+    codefile = None
     for i in range(len(lines)):
-        if '```javascript' in lines[i]:
-            codefence = True
-            jsfile = open(join(elem, (lines[i+1])[2:-1]), 'wt', encoding='utf8')
-            continue
-    
         if codefence:
-            if '```' in lines[i] and '```javascript' not in lines[i]:
+            if '```' in lines[i]:
                 codefence = False
-                jsfile.close()
+                codefile.close()
                 continue
-            
-            jsfile.write(lines[i])
+                
+            codefile.write(lines[i])
+        else:
+            for lnc_elem in lang_name_comment:
+                name = lnc_elem[0]
+                if '```'+name in lines[i]:
+                    codefence = True
+                    filename = join(elem, (lines[i+1])[len(lnc_elem[1]):(-len(lnc_elem[2])-1)])
+                    print('Parsing : ', filename)
+                    codefile = open(filename, 'wt', encoding='utf8')
+                    break
+
         
             

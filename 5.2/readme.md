@@ -29,13 +29,13 @@ c=a++ + 2; //→c는 3이 되고 a는 2가 된다.(a+2를 c에 대입하고 a에
 그래서 계산 과정에 있어 비슷한 수의 뺄셈은 피하도록 하는 것이 좋습니다.  
 또한 10진수로는 딱 떨어지는 값고 결과가 달라지기에 아래의 예제와 같이 문제를 해결하도록 합니다.  
 ```javascript
-//Floatingpoint.js
+//floating-point.js
 console.log(Math.sqrt(10001)-Math.sqrt(10000)); //권장하지 않음
 
 a = 0.16;
 b = 0.2;
 console.log(a / b == 0.8);  //→ false
-console.log(Math.abs(a / b - 0.8) <1e-10);  //->True
+console.log(Math.abs(a / b - 0.8) < 1e-10);  //->True
 ```
 
 ## 출력 결과

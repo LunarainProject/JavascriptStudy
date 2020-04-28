@@ -1,0 +1,18 @@
+<!--button2.html-->
+<!DOCTYPE html>
+<head>
+    <title>button2</title>
+    <script>
+        function func() {
+            console.log('hello');
+        }
+
+        window.onload = function() {
+            let button = document.getElementById("button");
+            button.onclick = func;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="hello" id="button">
+</body>

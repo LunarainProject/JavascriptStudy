@@ -4,12 +4,12 @@
 ## 문자열을 조작하는 메서드
 
 문자열을 처리하기 위한 객체로 String 객체가 마련되어 있습니다.  
-문자열을 String 객체로 변환하려면 String 생성자를 사용합니다. 
-문자열의 길이는 배열과 마찬가지로 length 프로퍼티로 구할 수 있습니다.  
+문자열을 String 객체로 변환하려면 String 생성자를 사용합니다. (node 및 브라우저 환경에서는 자동으로 변환됩니다.)  
+문자열의 길이는 배열과 마찬가지로 `length` 프로퍼티로 구할 수 있습니다.  
 몇몇 유용한 String객체의 메서드를 아래 예제에서 사용해보겠습니다.  
 
 ```javascript
-//msgObj.js
+//message-object.js
 var msgObj = new String("Delicious bag")
 console.log(msgObj.length);                   //→ 13
 console.log(msgObj.charAt(0));                //→ D : 문자열의 첫 번째 문자

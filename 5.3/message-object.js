@@ -1,4 +1,4 @@
-//msgObj.js
+//message-object.js
 var msgObj = new String("Delicious bag")
 console.log(msgObj.length);                   //→ 13
 console.log(msgObj.charAt(0));                //→ D : 문자열의 첫 번째 문자
